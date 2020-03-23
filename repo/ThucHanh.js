@@ -3,10 +3,10 @@ let RectAngle= function (length,width) {
     this.width=width;
 
     this.getLength =function () {
-        return length;
+        return this.length;
     }
     this.getWidth = function () {
-        return width;
+        return this.width;
     }
 
     this.setLength= function (length) {
@@ -17,10 +17,10 @@ let RectAngle= function (length,width) {
     }
 
     this.getAceage= function () {
-        return width*length;
+        return this.width*this.length;
     }
     this.getPerimeter=function () {
-        return 2*(width+length);
+        return 2*(this.width+this.length);
     }
     this.setRectAngel = function (length,width) {
         this.length=length;
@@ -29,7 +29,7 @@ let RectAngle= function (length,width) {
     this.createRect = function () {
         let c= document.getElementById("myCanvas").getContext("2d");
         c.fillStyle ="Black";
-        c.fillRect(0,0,length,width);
+        c.fillRect(0,0,this.length,this.width);
     }
 };
 
@@ -37,6 +37,11 @@ let hcn1 = new RectAngle(100,60);
 hcn1.createRect();
 alert(hcn1.getAceage());//diện tích
 alert(hcn1.getPerimeter());//chu vi
+hcn1.setRectAngel(50,40);
+alert(hcn1.getAceage());//diện tích
+alert(hcn1.getPerimeter());//chu vi
+hcn1.createRect();
+
 
 
 
